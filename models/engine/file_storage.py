@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import os.path
 from ..base_model import BaseModel
 
 class FileStorage:
@@ -21,10 +22,9 @@ class FileStorage:
                 
     def reload(self):
         '''reload'''
-        try:
+        if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r') as my_file:
                 self.__objects = json.load(my_file)
-            for key, value in self.__objects:
-                BaseModel(value)
-        except:
-            pass
+            for key in self.__objects:
+                temp = self.__objects[key].copy()
+                BaseModel(**temp)
