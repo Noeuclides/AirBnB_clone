@@ -114,8 +114,7 @@ class HBNBCommand(cmd.Cmd):
                 if len(arg) == 0 or arg[0] == name[0]:
                     k = search_obj[key]
                     obj_list.append(str(k))
-            temp = str(obj_list)
-            print(temp.strip('\\'))
+            print(obj_list)
 
     def do_update(self, args):
         """
