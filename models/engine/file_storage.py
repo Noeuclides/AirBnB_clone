@@ -12,20 +12,18 @@ class FileStorage:
 
     def all(self):
         '''all'''
-        all_objects = copy.deepcopy(self.__objects)
-        for key, value in all_objects.items():
-            for k, v in value.items():
-                if k == "created_at" or k == "updated_at":
-                    value.update({k : datetime.datetime.strptime(v, '%Y-%m-%dT%H:%M:%S.%f')})
-        return all_objects
+        return self.__objects
     def new(self, obj):
         '''new'''
-        new_object = {str(obj.__class__.__name__ + "." + obj.id) : obj.to_dict()}
+        new_object = {str(obj.__class__.__name__ + "." + obj.id) : obj}
         self.__objects.update(new_object)
     def save(self): 
         '''save'''
+        new_dict = {}
         with open(self.__file_path, 'w') as my_file:
-            json.dump(self.__objects, my_file)
+            for k, v in self.__objects.items():
+                new_dict[k] = v.to_dict()
+            json.dump(new_dict, my_file)
                 
     def reload(self):
         '''reload'''
@@ -34,4 +32,4 @@ class FileStorage:
                 self.__objects = json.load(my_file)
             for key in self.__objects:
                 temp = self.__objects[key].copy()
-                BaseModel(**temp)
+                self.__objects[key] = BaseModel(**temp)
