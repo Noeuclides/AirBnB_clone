@@ -7,6 +7,11 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 from models.amenity import Amenity
+from models.user import User
+from models.state import State
+from models.city import City
+from models.place import Place
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
@@ -107,10 +112,10 @@ class HBNBCommand(cmd.Cmd):
             for key in search_obj.keys():
                 name = key.split(".")
                 if len(arg) == 0 or arg[0] == name[0]:
-                    print(name[0])
                     k = search_obj[key]
                     obj_list.append(str(k))
-            print(obj_list)
+            temp = str(obj_list)
+            print(temp.strip('\\'))
 
     def do_update(self, args):
         """
@@ -119,7 +124,7 @@ class HBNBCommand(cmd.Cmd):
         arg = args.split()
         if len(arg) == 0:
             print("** class name missing **")
-        elif arg[0] != "BaseModel":
+        elif arg[0] not in self.class_list:
             print("** class doesn't exist **")
         elif len(arg) == 1:
             print("** instance id missing **")
@@ -135,7 +140,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 for key, value in objs.items():
                     if key == s_id:
-                        setattr(value, arg[2], arg[3])
+                        setattr(value, arg[2], arg[3].strip('"'))
                         storage.save()
                         storage.reload()
         else:
