@@ -7,6 +7,7 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
     """
     command interpreter class
@@ -39,7 +40,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) < 1:
             print("** class name missing **")
         elif arg[0] != "BaseModel":
-            print ("** class doesn't exist **")
+            print("** class doesn't exist **")
         else:
             new = BaseModel()
             new.save()
@@ -53,7 +54,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) < 1:
             print("** class name missing **")
         elif arg[0] != "BaseModel":
-            print ("** class doesn't exist **")
+            print("** class doesn't exist **")
         elif arg[1] is None:
             print("** instance id missing **")
         else:
@@ -61,6 +62,8 @@ class HBNBCommand(cmd.Cmd):
             s_id = str(arg[0] + "." + arg[1])
             if s_id in search_obj:
                 print(search_obj[s_id])
+            else:
+                print("** no instance found **")
 
     def do_destroy(self, args):
         """
@@ -70,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) < 1:
             print("** class name missing **")
         elif arg[0] != "BaseModel":
-            print ("** class doesn't exist **")
+            print("** class doesn't exist **")
         elif arg[1] is None:
             print("** instance id missing **")
         else:
@@ -80,7 +83,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 setattr(BaseModel, s_id, search_obj[s_id])
-                del search_obj[s_id]                
+                del(search_obj[s_id])
 
     def do_all(self, args):
         """
@@ -90,25 +93,43 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) >= 1 and arg[0] != "BaseModel":
             print("** class doesn't exist **")
         else:
-            list = []
+            obj_list = []
             search_obj = storage.all()
-            for key in search_obj:
-                list.append(str(search_obj[key]))
-            print(list)
+            for key in search_obj.keys():
+                k = search_obj[key]
+                obj_list.append(str(k))
+            print(obj_list)
 
-    def to_update(self):
+    def do_update(self, args):
         """
         updates an instance
         """
         arg = args.split()
         if len(arg) == 0:
             print("** class name missing **")
-        elif len(arg) == 1:
+        elif arg[0] != "BaseModel":
             print("** class doesn't exist **")
-            
+        elif len(arg) == 1:
+            print("** instance id missing **")
+        elif len(arg) == 2:
+            print("** attribute name missing **")
+        elif len(arg) == 3:
+            print("** value missing **")
+        elif len(arg) == 4:
+            objs = storage.all()
+            s_id = str(arg[0] + "." + arg[1])
+            if s_id not in objs:
+                print("** no instance found **")
+            else:
+                for key, value in objs.items():
+                    if key == s_id:
+                        setattr(value, arg[2], arg[3])
+                        storage.save()
+                        storage.reload()
+        else:
+            pass
 
 
 if __name__ == '__main__':
     inter = HBNBCommand()
     inter.cmdloop(intro=None)
-    
