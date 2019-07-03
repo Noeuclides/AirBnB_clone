@@ -14,8 +14,14 @@ class HBNBCommand(cmd.Cmd):
     command interpreter class
     """
     prompt = "(hbnb) "
-    class_list = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place', 'Review']
-
+    class_list = [
+        'BaseModel',
+        'User',
+        'State',
+        'City',
+        'Amenity',
+        'Place',
+        'Review']
 
     def emptyline(self):
         """

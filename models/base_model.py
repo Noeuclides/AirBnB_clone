@@ -1,10 +1,13 @@
 #!/usr/bin/python3
+'''Base module'''
 import uuid
 import datetime
 import models
 
+
 class BaseModel:
     ''' Base Class'''
+
     def __init__(self, *args, **kwargs):
         ''' init '''
         if kwargs:
@@ -12,12 +15,14 @@ class BaseModel:
                 if key == '__class__':
                     continue
                 elif key == 'created_at':
-                    self.created_at = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                    self.created_at = datetime.datetime.strptime(
+                        value, '%Y-%m-%dT%H:%M:%S.%f')
                 elif key == 'updated_at':
-                    self.updated_at = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                    self.updated_at = datetime.datetime.strptime(
+                        value, '%Y-%m-%dT%H:%M:%S.%f')
                 else:
                     setattr(self, key, value)
-            
+
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.datetime.now()
@@ -26,7 +31,8 @@ class BaseModel:
 
     def __str__(self):
         ''' str method '''
-        return '[{}] ({}) {}'.format(self.__class__.__name__, self.id, self.__dict__)
+        return '[{}] ({}) {}'.format(
+            self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         ''' save method '''
@@ -37,9 +43,7 @@ class BaseModel:
         ''' dict method '''
         new_dict = self.__dict__.copy()
         for key, val in new_dict.items():
-            if type(val) is datetime.datetime:
-                new_dict.update({key : val.isoformat()})
-        new_dict.update({'__class__' : self.__class__.__name__})
+            if isinstance(val, datetime.datetime):
+                new_dict.update({key: val.isoformat()})
+        new_dict.update({'__class__': self.__class__.__name__})
         return new_dict
-
-
