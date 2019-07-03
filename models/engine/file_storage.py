@@ -34,4 +34,7 @@ class FileStorage:
                 self.__objects = json.load(my_file)
             for key in self.__objects:
                 temp = self.__objects[key].copy()
-                BaseModel(**temp)
+                if "Basemodel" in key:
+                    BaseModel(**temp)
+                if "User" in key:
+                    BaseModel(**temp)
