@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import copy
 import os.path
 import datetime
 from ..base_model import BaseModel
@@ -11,7 +12,12 @@ class FileStorage:
 
     def all(self):
         '''all'''
-        return self.__objects
+        all_objects = copy.deepcopy(self.__objects)
+        for key, value in all_objects.items():
+            for k, v in value.items():
+                if k == "created_at" or k == "updated_at":
+                    value.update({k : datetime.datetime.strptime(v, '%Y-%m-%dT%H:%M:%S.%f')})
+        return all_objects
     def new(self, obj):
         '''new'''
         new_object = {str(obj.__class__.__name__ + "." + obj.id) : obj.to_dict()}
