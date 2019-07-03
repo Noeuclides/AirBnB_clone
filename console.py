@@ -6,6 +6,7 @@ module that contains the command interpreter class
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.amenity import Amenity
 
 
 class HBNBCommand(cmd.Cmd):
@@ -13,6 +14,8 @@ class HBNBCommand(cmd.Cmd):
     command interpreter class
     """
     prompt = "(hbnb) "
+    class_list = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place', 'Review']
+
 
     def emptyline(self):
         """
@@ -39,10 +42,10 @@ class HBNBCommand(cmd.Cmd):
 
         if len(arg) < 1:
             print("** class name missing **")
-        elif arg[0] != "BaseModel":
+        elif arg[0] not in self.class_list:
             print("** class doesn't exist **")
         else:
-            new = BaseModel()
+            new = eval(arg[0] + "()")
             new.save()
             print(new.id)
 
@@ -53,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
         arg = args.split()
         if len(arg) < 1:
             print("** class name missing **")
-        elif arg[0] != "BaseModel":
+        elif arg[0] not in self.class_list:
             print("** class doesn't exist **")
         elif arg[1] is None:
             print("** instance id missing **")
@@ -72,7 +75,7 @@ class HBNBCommand(cmd.Cmd):
         arg = args.split()
         if len(arg) < 1:
             print("** class name missing **")
-        elif arg[0] != "BaseModel":
+        elif arg[0] not in self.class_list:
             print("** class doesn't exist **")
         elif arg[1] is None:
             print("** instance id missing **")
@@ -82,7 +85,7 @@ class HBNBCommand(cmd.Cmd):
             if s_id not in search_obj:
                 print("** no instance found **")
             else:
-                setattr(BaseModel, s_id, search_obj[s_id])
+                setattr(eval(arg[0]), s_id, search_obj[s_id])
                 del(search_obj[s_id])
 
     def do_all(self, args):
@@ -90,14 +93,17 @@ class HBNBCommand(cmd.Cmd):
         print all string representation
         """
         arg = args.split()
-        if len(arg) >= 1 and arg[0] != "BaseModel":
+        if len(arg) >= 1 and arg[0] not in self.class_list:
             print("** class doesn't exist **")
         else:
             obj_list = []
             search_obj = storage.all()
             for key in search_obj.keys():
-                k = search_obj[key]
-                obj_list.append(str(k))
+                name = key.split(".")
+                if len(arg) == 0 or arg[0] == name[0]:
+                    print(name[0])
+                    k = search_obj[key]
+                    obj_list.append(str(k))
             print(obj_list)
 
     def do_update(self, args):
