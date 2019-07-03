@@ -5,6 +5,13 @@ import os.path
 import datetime
 from ..base_model import BaseModel
 from ..user import User
+from ..state import State
+from ..city import City
+from ..amenity import Amenity
+from ..place import Place
+from ..review import Review
+
+
 class FileStorage:
     '''file storage class'''
     __file_path = "file.json"
@@ -32,4 +39,5 @@ class FileStorage:
                 self.__objects = json.load(my_file)
             for key in self.__objects:
                 temp = self.__objects[key].copy()
-                self.__objects[key] = BaseModel(**temp)
+                name = key.split('.')
+                self.__objects[key] = eval(name[0] + '(**temp)')
