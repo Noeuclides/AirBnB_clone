@@ -41,5 +41,9 @@ class TestBaseModel(unittest.TestCase):
         temp = self.test1.to_dict()
         self.assertEqual(type(temp), dict)
 
+    def tearDown(self):
+        pass
+
+
 if __name__ == '__main__':
     unittest.main()
