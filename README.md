@@ -1,5 +1,6 @@
 # AirBnB Clone
-![mrbnb-logo](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUXW7JF5MT%2F20190704%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190704T044634Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c1e978b74e96abf15bd2fca8fd589392430ed99816a28edbf251fa4fc3df6bfd)
+<a href=""><img src="https://camo.githubusercontent.com/70996d3dcffa41c27a6f5d59f56a42d978a4684c/687474703a2f2f696d6775722e636f6d2f4a42434d4844502e706e67" title="FVCproductions" alt="FVCproductions"></a>
+
 
 **AirBnB Clone** In this clone you have some of the original features to find host place, confortable and easy pay.
 
@@ -32,8 +33,9 @@ When you run one of the last two lines you are in the interactive mode
 Also, you can run the console in a non-interactive mode
 
 ### Example Usage
-```(hbnb) create User 1203-4010-3249-13491
-```
+`(hbnb) create User 1203-4010-3249-13491
+<iframe src="https://drive.google.com/file/d/1OXrEGuYfJjPbIMKmWn_up8uHhpnSZe8J/preview" width="640" height="480"></iframe>`
+
 
 ## License
 
