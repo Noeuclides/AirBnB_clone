@@ -32,6 +32,14 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(self.test1.id)
         self.assertEqual(self.test1.name, "holberton")
 
+    def test_save(self):
+        time = self.test1.updated_at
+        self.test1.save()
+        self.assertNotEqual(self.test1.updated_at, time)
+
+    def test_to_dict(self):
+        temp = self.test1.to_dict()
+        self.assertEqual(type(temp), dict)
 
 if __name__ == '__main__':
     unittest.main()
