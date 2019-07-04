@@ -151,6 +151,9 @@ class HBNBCommand(cmd.Cmd):
             temp = temp.replace("(\"", "")
             temp = temp.replace("\")", "")
             return "show {}".format(temp)
+        elif ".all(" in line:
+            temp = line.split(".")
+            return "all {}".format(temp[0])
         else:
             return line
 
