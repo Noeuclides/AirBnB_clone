@@ -49,7 +49,9 @@ class TestBaseModel(unittest.TestCase):
     def test_to_dict(self):
         temp = self.test1.to_dict()
         self.assertEqual(type(temp), dict)
-
+        self.assertTrue('to_dict' in dir(self.test1))
+        self.assertEqual(type(temp['updated_at']), str)
+        self.assertEqual(type(temp['created_at']), str)
 
 if __name__ == '__main__':
     unittest.main()
