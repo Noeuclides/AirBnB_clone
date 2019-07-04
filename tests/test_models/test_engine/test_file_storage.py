@@ -28,6 +28,9 @@ class TestFileStorage(unittest.TestCase):
         stor4 = str(storage.all())
         self.assertNotEqual(stor3, stor4)
 
+    def test_reload(self):
+        pass
+
     def tearDown(self):
         pass
 
