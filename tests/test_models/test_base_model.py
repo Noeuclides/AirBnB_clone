@@ -41,6 +41,10 @@ class TestBaseModel(unittest.TestCase):
         time = self.test1.updated_at
         self.test1.save()
         self.assertNotEqual(self.test1.updated_at, time)
+        self.test1.save()
+        time2 = self.test1.updated_at
+        self.assertNotEqual(time, time2)
+        self.assertNotEqual(self.test1.updated_at, self.test1.created_at)
 
     def test_to_dict(self):
         temp = self.test1.to_dict()
