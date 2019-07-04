@@ -145,6 +145,15 @@ class HBNBCommand(cmd.Cmd):
         else:
             pass
 
+    def precmd(self, line):
+        if "show" in line:
+            temp = line.replace(".show", " ")
+            temp = temp.replace("(\"", "")
+            temp = temp.replace("\")", "")
+            return "show {}".format(temp)
+        else:
+            return line
+
 
 if __name__ == '__main__':
     inter = HBNBCommand()
