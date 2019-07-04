@@ -154,6 +154,15 @@ class HBNBCommand(cmd.Cmd):
         elif ".all(" in line:
             temp = line.split(".")
             return "all {}".format(temp[0])
+        elif ".count(" in line:
+            name = line.split('.')
+            objs = storage.all()
+            i = 0
+            for key in objs.keys():
+                if name[0] in key:
+                    i = i + 1
+            print(i)
+            return "\n"
         else:
             return line
 
