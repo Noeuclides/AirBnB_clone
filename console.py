@@ -146,7 +146,7 @@ class HBNBCommand(cmd.Cmd):
             pass
 
     def precmd(self, line):
-        if "show" in line:
+        if ".show(" in line:
             temp = line.replace(".show", " ")
             temp = temp.replace("(\"", "")
             temp = temp.replace("\")", "")
@@ -163,6 +163,11 @@ class HBNBCommand(cmd.Cmd):
                     i = i + 1
             print(i)
             return "\n"
+        elif ".destroy(" in line:
+            temp = line.replace(".destroy", " ")
+            temp = temp.replace("(\"", "")
+            temp = temp.replace("\")", "")
+            return "destroy {}".format(temp)
         else:
             return line
 
