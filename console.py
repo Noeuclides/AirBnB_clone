@@ -88,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif arg[0] not in self.class_list:
             print("** class doesn't exist **")
-        elif arg[1] is None:
+        elif len(arg) == 1:
             print("** instance id missing **")
         else:
             search_obj = storage.all()
@@ -97,6 +97,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 del(search_obj[s_id])
+                storage.save()
 
     def do_all(self, args):
         """
