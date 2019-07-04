@@ -1,5 +1,5 @@
 # AirBnB Clone
-![mrbnb-logo](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUXW7JF5MT%2F20190704%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190704T044634Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c1e978b74e96abf15bd2fca8fd589392430ed99816a28edbf251fa4fc3df6bfd)(https://nodesource.com/products/nsolid)
+![mrbnb-logo](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUXW7JF5MT%2F20190704%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190704T044634Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c1e978b74e96abf15bd2fca8fd589392430ed99816a28edbf251fa4fc3df6bfd)
 
 **AirBnB Clone** An aplications where found host place, confortable and easy pay.
 
