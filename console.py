@@ -140,7 +140,7 @@ class HBNBCommand(cmd.Cmd):
                 for key, value in objs.items():
                     if key == s_id:
                         setattr(value, arg[2], arg[3].strip('"'))
-                        storage.save()
+                        objs[key].save()
 
     def precmd(self, line):
         if ".show(" in line:
