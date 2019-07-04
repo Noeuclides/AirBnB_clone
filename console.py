@@ -140,9 +140,6 @@ class HBNBCommand(cmd.Cmd):
                     if key == s_id:
                         setattr(value, arg[2], arg[3].strip('"'))
                         storage.save()
-                        storage.reload()
-        else:
-            pass
 
     def precmd(self, line):
         if ".show(" in line:
