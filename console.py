@@ -96,7 +96,6 @@ class HBNBCommand(cmd.Cmd):
             if s_id not in search_obj:
                 print("** no instance found **")
             else:
-                setattr(eval(arg[0]), s_id, search_obj[s_id])
                 del(search_obj[s_id])
 
     def do_all(self, args):
@@ -168,6 +167,14 @@ class HBNBCommand(cmd.Cmd):
             temp = temp.replace("(\"", "")
             temp = temp.replace("\")", "")
             return "destroy {}".format(temp)
+        elif ".update(" in line:
+            temp = line.replace(".update", " ")
+            temp = temp.replace("(\"", "")
+            temp = temp.replace("\")", "")
+            temp = temp.replace(", ", " ")
+            temp = temp.replace("\"", "", 4)
+            print(temp)
+            return "update {}".format(temp)
         else:
             return line
 
