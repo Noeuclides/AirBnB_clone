@@ -1,5 +1,5 @@
 # AirBnB Clone
-<a href=""><img src="https://camo.githubusercontent.com/70996d3dcffa41c27a6f5d59f56a42d978a4684c/687474703a2f2f696d6775722e636f6d2f4a42434d4844502e706e67" title="FVCproductions" alt="FVCproductions" width="180" height="120"></a>
+<a href=""><img src="https://camo.githubusercontent.com/70996d3dcffa41c27a6f5d59f56a42d978a4684c/687474703a2f2f696d6775722e636f6d2f4a42434d4844502e706e67" title="FVCproductions" alt="FVCproductions" width="250" height="220"></a>
 
 
 **AirBnB Clone** In this clone you have some of the original features to find host place, confortable and easy pay.
@@ -16,11 +16,11 @@
 * Then you can run the console.py file with the following command:
  * option 1:
 
-		`$ ./console.py`
+		```$ ./console.py```
 
  * option 2:
 
-		`$ python3 console.py`
+		```$ python3 console.py```
 
 ### How to use it:
 #### a. Interective mode:
@@ -34,13 +34,12 @@ Also, you can run the console in a non-interactive mode
 ### Example Usage
 
     	    `λ ~/AirBnB_clone/ master* ./console.py
-(hbnb) create BaseModel
-4267f8ac-51a1-4c79-b240-833fb8c05437
-(hbnb) create User
-98be750c-1049-480a-a627-7dd582110385
-(hbnb) create Place
-e1c9a335-1993-423b-9f54-a1f8f3206467`
-<iframe src="https://drive.google.com/file/d/1OXrEGuYfJjPbIMKmWn_up8uHhpnSZe8J/preview" width="640" height="480"></iframe>
+	    `}(hbnb) create BaseModel
+	    `4267f8ac-51a1-4c79-b240-833fb8c05437
+	    `(hbnb) create User
+	    `98be750c-1049-480a-a627-7dd582110385
+	    `(hbnb) create Place
+	    `e1c9a335-1993-423b-9f54-a1f8f3206467`
 
 
 ## License
