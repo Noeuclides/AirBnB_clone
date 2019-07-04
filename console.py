@@ -125,22 +125,21 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif arg[0] not in self.class_list:
             print("** class doesn't exist **")
-        elif len(arg) == 1 and arg[0] in self.class_list:
+        elif len(arg) == 1:
             print("** instance id missing **")
+        elif arg[0] + "." + arg[1] not in storage.all():
+            print("** no instance found **")
         elif len(arg) == 2:
             print("** attribute name missing **")
         elif len(arg) == 3:
             print("** value missing **")
-        elif len(arg) == 4:
+        else:
             objs = storage.all()
-            s_id = str(arg[0] + "." + arg[1])
-            if s_id not in objs:
-                print("** no instance found **")
-            else:
-                for key, value in objs.items():
-                    if key == s_id:
-                        setattr(value, arg[2], arg[3].strip('"'))
-                        objs[key].save()
+            s_id = arg[0] + "." + arg[1]
+            for key, value in objs.items():
+                if key == s_id:
+                    setattr(value, arg[2], arg[3].strip('"'))
+                    objs[key].save()
 
     def precmd(self, line):
         if ".show(" in line:
