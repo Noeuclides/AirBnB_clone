@@ -119,12 +119,12 @@ class HBNBCommand(cmd.Cmd):
         """
         updates an instance
         """
-        arg = args.split()
-        if len(arg) == 0:
+        arg = args.split(" ")
+        if arg[0] == "":
             print("** class name missing **")
         elif arg[0] not in self.class_list:
             print("** class doesn't exist **")
-        elif len(arg) == 1:
+        elif len(arg) == 1 and arg[0] in self.class_list:
             print("** instance id missing **")
         elif len(arg) == 2:
             print("** attribute name missing **")
