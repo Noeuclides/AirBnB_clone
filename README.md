@@ -6,7 +6,7 @@
 ## The Console
 ### How To Start:
 In order to use the console you have to clone this repository with the following command:
-```python
+```bash
 $ git clone https://github.com/ryanhudson/AirBnB_clone
 ```
 
@@ -34,6 +34,7 @@ Also, you can run the console in a non-interactive mode:
 ![alt text](https://raw.githubusercontent.com/ryanhudson/AirBnB_clone/master/images/Screenshot_2019-07-04%20Holberton%20School's%20awesome%20intranet.png)
 
 The console has some classes that the user have access to:
+
 |Class name | Class attributes|
 |:--------:|:-----------------:|
 |User|email - password - first_name - last_name|
@@ -44,6 +45,7 @@ The console has some classes that the user have access to:
 | Review | place_id - user_id - text |
 
 Now, in the console, you have access to some methods that you can use in order to change some of the attributes of the classes:
+
 | Method | Description | Usage |
 |:---: | :---: | :---:
 |create | creates a new instance of the class | create <class name> |
@@ -54,13 +56,13 @@ Now, in the console, you have access to some methods that you can use in order t
 
 
 ### Example Usage
-You can create your own instance.
+You can create your own instance:
 ![create example](https://raw.githubusercontent.com/ryanhudson/AirBnB_clone/master/images/consolecreate.PNG)
 
-Then you can use all command to see what instance have been created 
+Then you can use all command to see what instance have been created:
 ![all example](https://raw.githubusercontent.com/ryanhudson/AirBnB_clone/master/images/consoleall.PNG)
 
-Use destroy to delete some instance. In the example below we `destroy` an `User`, and then use `show` to see if it was successfully deleted. As you can see the console shows the message `** no instance found **` so we made it.
+Use destroy to delete some instance. In the example below we `destroy` an `User`, and then use `show` to see if it was successfully deleted. As you can see the console shows the message `** no instance found **` so we made it:
 ![destroy example](https://raw.githubusercontent.com/ryanhudson/AirBnB_clone/master/images/consolesdestroy.PNG)
 
 The console allows the user to update some instance attributes as follow:
@@ -102,7 +104,9 @@ Compilator
 ### Authors
 
 Ryan Hudson <ryan.e.hudson@gmail.com>
+
 Nicolás Martínez <euclidesnoeuclides@gmail.com>
 
 To generate authors file, check this link out:
+
 https://github.com/moby/moby/blob/master/hack/generate-authors.sh
