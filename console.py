@@ -65,11 +65,11 @@ class HBNBCommand(cmd.Cmd):
         print string representation of an instance
         """
         arg = args.split()
-        if len(arg) < 1:
+        if len(arg) == 0:
             print("** class name missing **")
         elif arg[0] not in self.class_list:
             print("** class doesn't exist **")
-        elif arg[1] is None:
+        elif len(arg) == 1:
             print("** instance id missing **")
         else:
             search_obj = storage.all()
