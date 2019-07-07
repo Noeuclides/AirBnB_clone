@@ -47,12 +47,12 @@ The console has some classes that the user have access to:
 Now, in the console, you have access to some methods that you can use in order to change some of the attributes of the classes:
 
 | Method | Description | Usage |
-| --- | --- | -------- |
-| create | creates a new instance of the class | create <class name> |
-| show | prints the string representation of the instance by its class name | show <class name> <id> |
-| destroy | deletes an instance based on the class name and id | destroy <class name> <id> |
-| all | prints all the string representation of all instance based or not on the class name | all or all <class name> |
-| update | updates an instance based on the class name and id by adding or updating attribute | update <class name> <id> <attribute name> "<attribute value>" |
+| --- | --- | --- |
+| create | creates a new instance of the class | `create <class name>` |
+| show | prints the string representation of the instance by its class name | `show <class name> <id>` |
+| destroy | deletes an instance based on the class name and id | `destroy <class name> <id>` |
+| all | prints all the string representation of all instance based or not on the class name | `all` or `all <class name>` |
+| update | updates an instance based on the class name and id by adding or updating attribute | update <class name> <id> <attribute name> "<attribute value>"` |
 
 
 ### Example Usage
