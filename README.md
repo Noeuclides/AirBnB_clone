@@ -35,24 +35,24 @@ Also, you can run the console in a non-interactive mode:
 
 The console has some classes that the user have access to:
 
-|Class name | Class attributes|
-|:--------:|:-----------------:|
-|User|email - password - first_name - last_name|
-|State | name |
-|City | state_id - name |
-|Amenity | name |
-|Place | city_id - user_id - name - description - number_rooms - number_bathrooms - max_guest - price_by_night - latitude - longitude - amenity_ids |
+| Class name | Class attributes |
+| :--------: | :-----------------: |
+| User|email - password - first_name - last_name|
+| State | name |
+| City | state_id - name |
+| Amenity | name |
+| Place | city_id - user_id - name - description - number_rooms - number_bathrooms - max_guest - price_by_night - latitude - longitude - amenity_ids |
 | Review | place_id - user_id - text |
 
 Now, in the console, you have access to some methods that you can use in order to change some of the attributes of the classes:
 
 | Method | Description | Usage |
-|:---: | :---: | :------------:|
-|create | creates a new instance of the class | create <class name> |
-|show | prints the string representation of the instance by its class name | show <class name> <id> |
-|destroy | deletes an instance based on the class name and id | destroy <class name> <id> |
-|all | prints all the string representation of all instance based or not on the class name | all or all <class name> |
-|update | updates an instance based on the class name and id by adding or updating attribute | update <class name> <id> <attribute name> "<attribute value>" |
+| :---: | :---: | -------- |
+| create | creates a new instance of the class | create <class name> |
+| show | prints the string representation of the instance by its class name | show <class name> <id> |
+| destroy | deletes an instance based on the class name and id | destroy <class name> <id> |
+| all | prints all the string representation of all instance based or not on the class name | all or all <class name> |
+| update | updates an instance based on the class name and id by adding or updating attribute | update <class name> <id> <attribute name> "<attribute value>" |
 
 
 ### Example Usage
