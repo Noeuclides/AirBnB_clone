@@ -5,8 +5,8 @@
     border: 1px solid #DDDDDD; 
     border-radius: 4px;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
 }
 .container section.filters button{
     font-size: 18px;
@@ -17,18 +17,25 @@
     border: 0;
     border-radius: 4px;
     margin-right: 30px;
+    margin-left: auto;
 }
 .container section.filters div.locations{
     height: 100%;
     width: 25%;
     border-right: #DDDDDD solid 1px;
+    padding-left: 4%;
+
 }
 .container section.filters div.amenities{
     height: 100%;
     width: 25%;
+    display: flex;
+    position: relative;
+
 }
 .container section.filters h3{
     font-weight: 600;
+    text-indent: 70px;
 }
 .container section.filters h4{
     font-weight: 400;
