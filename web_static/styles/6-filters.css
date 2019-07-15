@@ -44,3 +44,20 @@ button:hover{
     font-size: 14px;
 
 }
+.popover{
+    background-color: #FAFAFA;
+    width: 25%;
+    border: #DDDDDD 1px solid;
+    border-radius: 4px;
+    display: none;
+}
+.popover h2{
+    font-size: 16px;
+}
+.filters div:hover .popover{
+    display: block;
+}
+section.filters ul li{
+    list-style: none;
+    margin: 5px;
+}
